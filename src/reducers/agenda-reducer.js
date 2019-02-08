@@ -1,7 +1,17 @@
 import {
-    DEFAULT_ACTION
+    GET_TAREFAS
 } from '../actions/type';
 
-export default (state = {ordenacao: "a-z"}, action) => {
-    return state[DEFAULT_ACTION] || '';
+export default (state = {agenda: []}, action) => {
+    console.log(action);
+    switch(action.type) {
+        case GET_TAREFAS:
+            return {
+                ...state,
+                tarefas: action.tarefas
+            }
+
+            default:
+                return {state, action};
+    }
 }
