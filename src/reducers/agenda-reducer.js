@@ -2,8 +2,7 @@ import {
     GET_TAREFAS
 } from '../actions/type';
 
-export default (state = {agenda: []}, action) => {
-    console.log(action);
+export default (state = {tarefas: []}, action) => {
     switch(action.type) {
         case GET_TAREFAS:
             return {
@@ -12,6 +11,6 @@ export default (state = {agenda: []}, action) => {
             }
 
             default:
-                return {state, action};
+                return state || '';
     }
 }
