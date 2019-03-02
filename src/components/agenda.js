@@ -35,7 +35,9 @@ class Agenda extends Component {
       <div>
         <AgendaForm />
         {tarefas.map(r =>
-          <p key={r.id}>{r.nome}
+          <p key={r.id}>
+          <span>Nome da tarefa: </span>{r.nome}
+          <span>horario da tarefa: </span>{r.horario}
             <button onClick={() => { this.props.set_tarefa(r) }}>Alterar</button>
             <button onClick={() => { this.props.delete_tarefa(r.id) }}>Excluir</button>
           </p>)}
